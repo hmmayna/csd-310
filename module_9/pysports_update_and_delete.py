@@ -1,8 +1,8 @@
-""" 
+"""
     Title: pysports_update_and_delete.py
     Author: Heather Maynard
     Date: February 12, 2023
-    Description: Pysports database updating, deleting, and inserting.
+    Description: Pysports database updating, deleting, and inserting
 """
 
 """ import statements """
