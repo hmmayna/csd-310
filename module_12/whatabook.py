@@ -22,10 +22,10 @@ config = {
 def show_menu():
     print("\n  -- Main Menu --")
 
-    print("1. View Our Store Locations\n 2. View Books\n 3. User Account\n 4. Exit")
+    print("1. View Books\n 2. View Our Store Locations\n 3. User Account\n 4. Exit")
 
     try:
-        choice = int(input(' <Example enter: 2 for book listing>: '))
+        choice = int(input(' <Example enter: 2 for viewing store locations>: '))
 
         return choice
     except ValueError:
@@ -33,16 +33,6 @@ def show_menu():
 
         sys.exit(0)
         
-def show_locations(_cursor):
-    _cursor.execute("SELECT store_id, locale from store")
-
-    locations = _cursor.fetchall()
-
-    print("\n  -- STORE LOCATIONS --")
-
-    for location in locations:
-        print("  Locale: {}\n".format(location[1]))
-
 def show_books(_cursor):
     # inner join query 
     _cursor.execute("SELECT book_id, book_name, author, details FROM book")
@@ -54,7 +44,17 @@ def show_books(_cursor):
     
     # iterate over the player data set and display the results 
     for book in books:
-        print("  Book Name: {}\n  Author: {}\n  Details: {}\n".format(book[1], book[2], book[3]))
+        print("  Book Name: {}\n  Author: {}\n  Details: {}\n".format(book[0], book[1], book[2]))
+        
+def show_locations(_cursor):
+    _cursor.execute("SELECT store_id, locale from store")
+
+    locations = _cursor.fetchall()
+
+    print("\n  -- STORE LOCATIONS --")
+
+    for location in locations:
+        print("  Locale: {}\n".format(location[1]))
 
 def validate_user():
     """ validate the users ID """
