@@ -65,10 +65,16 @@ CREATE TABLE wishlist (
 );
 
 /*
-    insert store 
+    insert stores
 */
 INSERT INTO store(locale)
     VALUES('9571 Hollyview lane, Tennessee, TN 68465');
+    
+INSERT INTO store(locale)
+    VALUES('48 Hilly Road, Wayings, TN 64738');
+    
+INSERT INTO store(locale)
+    VALUES('384 Burrow Highway, Smithville, TN 56738');
 
 /*
     insert books
